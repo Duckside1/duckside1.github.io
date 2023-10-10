@@ -1,0 +1,503 @@
+@font-face {
+    font-family: "Campton";
+    src: url("./fonts/Campton/CamptonSemiBold.otf");
+}
+
+@font-face {
+    font-family: "Campton-Light";
+    src: url("./fonts/Campton/CamptonLight.otf");
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Campton";
+    outline: none;
+}
+
+body {
+    background: #000;
+}
+
+body,
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+header img {
+    height: 60px;
+    width: 60px;
+}
+
+.Section1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./assets/Background2.png") no-repeat;
+    background-size: cover;
+}
+
+.Section1 img {
+    width: 350px;
+    position: absolute;
+    z-index: 150;
+    opacity: 0;
+    position: relative;
+    transition: 0.5s;
+    top: 50px;
+}
+
+.Section1 h1 {
+    font-size: 128px;
+    text-transform: uppercase;
+    opacity: 0;
+    position: absolute;
+    transition: 0.5s;
+    margin-top: 50px;
+}
+
+.Section1 h1.active {
+    opacity: 1;
+    margin-top: 0;
+}
+
+.Section2,
+.Section3,
+.Section5,
+.Section6 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Section2 .Gallery,
+.Section5 .Gallery {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: 0 0;
+    filter: brightness(50%);
+    border-radius: 0 30px 30px 0;
+}
+
+.Section3 .Gallery,
+.Section6 .Gallery {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: 0 0;
+    filter: brightness(50%);
+    border-radius: 0 30px 30px 0;
+    border-radius: 30px 0 0 30px;
+}
+
+.Section6 .Gallery {
+    object-fit: contain;
+    object-position: center center;
+    filter: none;
+}
+
+.Section2 .Box,
+.Section3 .Box,
+.Section5 .Box,
+.Section6 .Box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.Section2 .Box h2,
+.Section5 .Box h2,
+.Section6 .Box h2 {
+    margin-bottom: 25px;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.Section5 .hiddenText {
+    display: none;
+    font-size: 36px;
+    margin-bottom: 50px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.Section3 .Box div,
+.Section5 .Box div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 700px;
+}
+
+.Section2 .Box img,
+.Section4 img,
+.Section6 .Box img,
+footer img {
+    width: 30px;
+    height: 30px;
+    transform: rotate(30deg) translateY(-10px);
+}
+
+.Section2 .Box ul,
+.Section3 .Box ul,
+.Section5 .Box ul {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Section2 .Box ul li img,
+.Section3 .Box ul li img,
+.Section5 .Box ul li img {
+    transform: none;
+    width: 25px;
+    height: 25px;
+}
+
+.Section2 .Box ul li,
+.Section3 .Box ul li,
+.Section5 .Box ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Campton-Light";
+}
+
+.Row {
+    display: flex;
+    align-items: center;
+}
+
+.Section4 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Section4 h2 {
+    font-size: 42px;
+}
+
+.Section4 iframe,
+.Section4 video {
+    border-radius: 20px;
+}
+
+.Section6 button {
+    font-size: 24px;
+    background: #FAEE36;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 30px #FAEE36;
+}
+
+.Section6 button:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+footer p {
+    font-family: "Campton-Light";
+}
+
+footer img {
+    transform: none;
+}
+
+/* animation */
+.Section2 .Gallery,
+.Section2 .Box,
+.Section3 .Gallery,
+.Section3 .Box,
+.Section5 .Box,
+.Section5 .Gallery,
+.Section6 .Box,
+.Section6 .Gallery,
+.Section4 iframe,
+.Section4 video,
+.Section7 div img {
+    transition: 0.7s;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
+
+.Section2 .Gallery.active,
+.Section2 .Box.active,
+.Section3 .Gallery.active,
+.Section3 .Box.active,
+.Section5 .Box.active,
+.Section6 .Box.active,
+.Section4 iframe.active,
+.Section4 video.active,
+.Section5 .Gallery.active,
+.Section6 .Gallery.active,
+.Section7 div img.active {
+    opacity: 1;
+    top: 0;
+}
+
+.Section1 img.active {
+    top: 0;
+    opacity: 1;
+}
+
+.Section7 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Section7 div {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 30px;
+}
+
+.Section7 div img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.swiper {
+    max-width: 750px !important;
+    width: 750px;
+    height: 500px;
+    border-radius: 30px;
+    display: none !important;
+}
+
+
+.swiper-wrapper,
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.swiper img {
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1500px) {
+
+    .Section5,
+    .Section6 {
+        padding: 30px;
+        flex-direction: column;
+        height: auto;
+        gap: 50px
+    }
+
+    .Section5 .Gallery,
+    .Section6 .Gallery {
+        border-radius: 20px;
+        max-width: 900px;
+    }
+
+    .Section6 {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+
+    .Section6 .Box div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Section6 .Box div .Row {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Section7 div {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .Section7 {
+        margin: 100px 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .Section2,
+    .Section3,
+    .Section4 {
+        padding: 30px;
+        flex-direction: column;
+        height: auto;
+        gap: 50px
+    }
+
+    .Section2 .Gallery,
+    .Section3 .Gallery {
+        border-radius: 20px;
+        max-width: 900px;
+        height: 600px;
+    }
+
+    .Section3 {
+        flex-direction: column-reverse;
+    }
+
+    .Section2 .Gallery,
+    .Section2 .Box,
+    .Section3 .Gallery,
+    .Section3 .Box,
+    .Section5 .Box,
+    .Section5 .Gallery,
+    .Section6 .Box,
+    .Section6 .Gallery,
+    .Section4 iframe,
+    .Section7 div img,
+    .Section4 video {
+        opacity: 1;
+        top: 0;
+    }
+
+    .Section5 .hiddenText {
+        display: flex;
+    }
+
+    .swiper {
+        display: flex !important;
+        width: 100%;
+    }
+
+    .Section5 .Gallery {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Section4 {
+        padding: 30px;
+    }
+
+    .Section4 iframe {
+        width: 100%;
+    }
+
+    .Section1 h1 {
+        font-size: 80px;
+    }
+
+    .Section5 .Box {
+        padding: 0;
+    }
+
+    .Section7 div {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .Section7 {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Section1 h1 {
+        font-size: 70px;
+    }
+
+    .Section1 img {
+        width: 80%;
+    }
+
+    .Section2 .Gallery,
+    .Section3 .Gallery {
+        height: auto;
+    }
+
+    .Section6 .Box {
+        padding: 0;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        padding: 30px 15px;
+    }
+
+    .swiper {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .Row {
+        flex-direction: column-reverse !important;
+        text-align: center;
+        gap: 0;
+    }
+
+    .Section4 video {
+        width: 100%;
+        height: auto;
+    }
+}
